@@ -23,12 +23,8 @@ def join_words(words):
 
 def display_info(words):
     """
-        Takes as input a query and creates a text file named query_name.txt
-        Writes to that file the wikipedia url and information related to query
-    
-        todo: 1) add error checking for bad wikipedia return results, 
-              2) figure out how to write an error to file and update README
-        
+        Takes as input a query and writes result to a text file named search_result.txt
+        Uses Wikipedia to search and return a summary of text related to search query
         """
     # join query words separated by underscore to append to url
     query_name = join_words(words)
@@ -42,8 +38,14 @@ def display_info(words):
         json.dump(r_dict, outfile)
 
 
-
 if __name__ == "__main__":
+    # Note: The following can be utilized via CLI with search terms 
+    # immediately after the filename separated by spaces
     arg = sys.argv
     display_info(arg[1:])
+    
+    # Note: You can use the following to simply call the function with search terms as args
+    #     : user query must be entered with spaces between terms
+    # user_query = 'Nelson Mandela'
+    # display_info(user_query)
 

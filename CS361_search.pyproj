@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d9b61d25-7325-4a4d-90ce-0e974d9e3efc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CS361_search.py</StartupFile>
+    <StartupFile>search.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CS361_search.py" />
+    <Compile Include="search.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="search_result.txt" />
+    <Content Include="README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
