@@ -1,13 +1,15 @@
-# CS361 Assignment 5: MVP Microservices
+# CS361 Assignment 7: Microservices Integration
 # Author: Elaine Zamora
-# Date: 10/27/2021
+# Date: 11/10/2021
 # 
 
 import sys
 import argparse
 import json
+import demjson
 import requests
 import wikipedia
+import pullSaidImage as pi
 
 url = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search="
 
@@ -31,11 +33,35 @@ def display_info(words):
 
     # search wikipedia, parse data, and write summary to search_result.txt
     summary = wikipedia.summary(query_name)
-    #print(summary)
+
+    #create dictionary to store results for user to access
     r_dict = {'name':query_name, 'summary':summary}
 
+    # pull image and attach url to r_dict with key: 'image'
+    search_term = " ".join(words)
+    image_list = get_image(search_term)
+    # attach to dictionary  here *****  TODO 
+    r_dict["Images"] = image_list
+
+
+    # write results of name, summary, image to json outfile
     with open("search_result.txt", "w") as outfile:
         json.dump(r_dict, outfile)
+    outfile.close()
+
+
+def get_image(search_term):
+    """
+    Takes as input a search term and returns a url corresponding to an image
+    found with the user's query. Uses team member (Laura) microservice
+    """
+    to_file = 'C:\\Users\\elain\\361\\search\\CS361_search\\TEST_JSON.json'
+    pi.pullSaidImage_give(search_term, to_file)
+    with open(to_file, 'r') as openfile:
+        json_obj = json.load(openfile)
+    json_final = demjson.decode(json_obj)
+    return json_final
+
 
 
 if __name__ == "__main__":
@@ -48,4 +74,3 @@ if __name__ == "__main__":
     #     : user query must be entered with spaces between terms
     # user_query = 'Nelson Mandela'
     # display_info(user_query)
-

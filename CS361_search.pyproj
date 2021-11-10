@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="pullSaidImage.py" />
     <Compile Include="search.py" />
   </ItemGroup>
   <ItemGroup>
