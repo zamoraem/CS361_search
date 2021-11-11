@@ -8,7 +8,6 @@ import demjson
 from bs4 import BeautifulSoup
 
 
-
 def getdata(url): 
     r = requests.get(url)
     return r.text 
@@ -39,9 +38,8 @@ def pullSaidImage_give(search_term, location):
         #return link
     pass
 
-#def main():
+def main():
     
 #   pullSaidImage_give("blue",'C:\\Users\\Laura\\source\\repos\\SoftwareOneWebPage-LauraElderStocks\\images.json')
-
-#if __name__ == "__main__":
-#    main()
+    if __name__ == "__main__":
+        main()
