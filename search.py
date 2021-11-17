@@ -18,7 +18,14 @@ def display_info(words, location):
     to_file = location
 
    # search wikipedia, parse data, and write summary to search_result.txt
-    summary = wikipedia.summary(words)
+    try: 
+        summary = wikipedia.summary(words)
+    except:
+        temp = {'name':words, 'summary':'NULL'}
+        with open(to_file, "w") as outfile:
+            json.dump(temp, outfile)
+        outfile.close()
+        
 
     #create dictionary to store results for user to access
     r_dict = {'name':words, 'summary':summary}
@@ -32,9 +39,9 @@ def display_info(words, location):
 
 def main():
     # example usage
-   # user_query = 'nelson mandelma'
-   # file_location = 'C:\\Users\\elain\\361\\search_result.txt'
-   # display_info(user_query, file_location)
+    user_query = 'obama'
+    file_location = 'C:\\Users\\elain\\361\\search_result.txt'
+    display_info(user_query, file_location)
 
 #if __name__ == "__main__":
 #        main()
