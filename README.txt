@@ -12,3 +12,5 @@ OUTPUT: To access results of your search query, please visit your file at user-s
 			'name':		corresponds to the entered search terms
 			'summary':	contains a text string that describes a Wikipedia 
 						summary resulting from user's search term(s)
+
+ERROR: If an invalid search term (e.g. misspelling, not searchable term) is entered, 'summary' will be set to NULL.
