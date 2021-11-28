@@ -14,3 +14,9 @@ OUTPUT: To access results of your search query, please visit your file at user-s
 						summary resulting from user's search term(s)
 
 ERROR: If an invalid search term (e.g. misspelling, not searchable term) is entered, 'summary' will be set to NULL.
+
+IMPORTS: Please import the following
+import sys
+import json
+import requests
+import wikipedia
