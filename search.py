@@ -39,9 +39,9 @@ def display_info(words, location):
 
 def main():
     # example usage
-    user_query = 'oprah'
-    file_location = 'C:\\Users\\elain\\361\\search_result.txt'
-    display_info(user_query, file_location)
+    #user_query = 'oprah'
+    #file_location = 'C:\\Users\\elain\\361\\search_result.txt'
+    #display_info(user_query, file_location)
 
 if __name__ == "__main__":
         main()
